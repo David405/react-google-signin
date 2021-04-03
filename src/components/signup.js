@@ -8,7 +8,12 @@ const clientId = process.env.REACT_APP_OAUTH_CLIENTID;
 
 function SignUp() {
     const onSuccess = (res) => {
-        console.log('Signup success: currentUser:', res.profileObj);
+        //console.log('Signup success: currentUser:', res.profileObj);
+        const data = {
+            first_name: res.profileObj.givenName,
+            last_name: res.profileObj.familyName,
+            email: res.profileObj.email
+        }
 
         fetch('http://localhost:5001/users/google', {  
             method: 'POST',
@@ -23,7 +28,6 @@ function SignUp() {
             })
             })
         refreshTokenSetup(res);
-        // console.log(body)
     };
 
     const onFailure = (res) => {

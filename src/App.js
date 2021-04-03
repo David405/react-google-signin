@@ -1,4 +1,3 @@
-/* global google */
 import logo from './logo.svg';
 import './App.css';
 import OneTap from './components/onetap';
@@ -9,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <SignUp />
+        {/* <SignUp /> */}
         {/* <Logout /> */}
         <OneTap />
       </header>

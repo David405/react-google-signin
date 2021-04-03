@@ -1,4 +1,4 @@
-/* global google */
+
 import React, {useState, useEffect} from 'react';
 
 const google = window.google;
@@ -10,16 +10,16 @@ function OneTap () {
     setIsSignedIn(true);
     console.log(response.credential);
 
-    // fetch('https://mywebsite.com/endpoint/', {  
-    //         method: 'POST',
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify({
-    //             token: response.credential
-    //         })
-    //         })
+    fetch('http://localhost:5001/users/google_auth', {  
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                token: response.credential
+            })
+            })
   }
 
   useEffect(() => {
